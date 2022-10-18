@@ -7,7 +7,7 @@ describe('Character Model', () => {
   });
 
   describe('Parte UNO', () => {
-    xit('should not create the Character if name is not send', async () => {
+    it('should not create the Character if name is not send', async () => {
       expect.assertions(1);
       try {
         await Character.create({hp: 100.0, mana: 150.0});
@@ -16,7 +16,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should not create the Character if hp is not send', async () => {
+    it('should not create the Character if hp is not send', async () => {
       expect.assertions(1);
       try {
         await Character.create({name: 'Franco', mana: 150.0});
@@ -25,7 +25,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should not create the Character if mana is not send', async () => {
+    it('should not create the Character if mana is not send', async () => {
       expect.assertions(1);
       try {
         await Character.create({hp: 100.0, name: 'Franco'});
@@ -34,7 +34,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should not create the Character if code is not send', async () => {
+    it('should not create the Character if code is not send', async () => {
       expect.assertions(1);
       try {
         await Character.create({name: 'Franco', hp: 100.0, mana: 150.0});
@@ -43,7 +43,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should not create the Character if race is not a valid option', async () => {
+    it('should not create the Character if race is not a valid option', async () => {
       expect.assertions(1);
       try {
         await Character.create({code: 'FRAN', name: 'Franco', hp: 100.0, mana: 150.0, race: 'Monster'});
@@ -52,7 +52,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should not create the Character if code is more than 5 chars', async () => {
+    it('should not create the Character if code is more than 5 chars', async () => {
       expect.assertions(1);
       try {
         await Character.create({code: 'FRANCO', name: 'Franco', hp: 100.0, mana: 150.0});
@@ -61,7 +61,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should create the Character if all required properties are ok', async () => {
+    it('should create the Character if all required properties are ok', async () => {
       const character = await Character.create({
         code: 'FRAN',
         name: 'Franco',
@@ -79,7 +79,7 @@ describe('Character Model', () => {
       });
     });
   
-    xit('should not create two Characters with the same name', async () => {
+    it('should not create two Characters with the same name', async () => {
       expect.assertions(2);
       try {
         const characterOne = await Character.create({code: 'ONE', name: 'First', hp: 100.0, mana: 150.0})
@@ -100,7 +100,7 @@ describe('Character Model', () => {
   })
 
   describe('Parte DOS', () => {
-    xit('should not create the Character if name is forbidden', async () => {
+    it('should not create the Character if name is forbidden', async () => {
       expect.assertions(1);
       try {
         await Character.create({
@@ -114,7 +114,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should not create the Character if code is forbidden', async () => {
+    it('should not create the Character if code is forbidden', async () => {
       expect.assertions(1);
       try {
         await Character.create({
@@ -128,7 +128,7 @@ describe('Character Model', () => {
       }
     });
   
-    xit('should not create the Character if code is forbidden', async () => {
+    it('should not create the Character if code is forbidden', async () => {
       expect.assertions(1);
       try {
         await Character.create({

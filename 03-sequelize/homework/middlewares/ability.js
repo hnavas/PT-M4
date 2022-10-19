@@ -19,9 +19,7 @@ try {
 router.put('/setCharacter', async (req, res) => {
   const { idAbility, codeCharacter } = req.body;
   const ability = await Ability.findByPk(idAbility);
-  // console.log(ability.toJSON());
   await ability.setCharacter(codeCharacter);
-  // console.log(ability.toJSON());
   res.json(ability.toJSON());
 });
 
